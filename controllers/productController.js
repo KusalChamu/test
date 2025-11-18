@@ -1,4 +1,4 @@
-import Product from "../models/product"    ;
+import Product from "../models/product.js"    ;
 
 export async function getProducts(req,res){
     try{
@@ -44,7 +44,7 @@ export async function saveProducts(req,res){
     })
 }
 
-export async function deleteProducts(res,res){
+export async function deleteProducts(req,res){
     if(!isAdmin(req)){
         res.status(403).json({
             message:'need to be admin to perform this action'
